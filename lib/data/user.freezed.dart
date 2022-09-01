@@ -21,7 +21,6 @@ User _$UserFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$User {
   String get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'profile_image_url')
   String get profileImageUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -33,8 +32,7 @@ mixin _$User {
 abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res>;
-  $Res call(
-      {String id, @JsonKey(name: 'profile_image_url') String profileImageUrl});
+  $Res call({String id, String profileImageUrl});
 }
 
 /// @nodoc
@@ -68,8 +66,7 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   factory _$$_UserCopyWith(_$_User value, $Res Function(_$_User) then) =
       __$$_UserCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String id, @JsonKey(name: 'profile_image_url') String profileImageUrl});
+  $Res call({String id, String profileImageUrl});
 }
 
 /// @nodoc
@@ -100,18 +97,16 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_User implements _User {
-  const _$_User(
-      {required this.id,
-      @JsonKey(name: 'profile_image_url') this.profileImageUrl = ""});
+  const _$_User({required this.id, required this.profileImageUrl});
 
   factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
 
   @override
   final String id;
   @override
-  @JsonKey(name: 'profile_image_url')
   final String profileImageUrl;
 
   @override
@@ -151,16 +146,14 @@ class _$_User implements _User {
 
 abstract class _User implements User {
   const factory _User(
-          {required final String id,
-          @JsonKey(name: 'profile_image_url') final String profileImageUrl}) =
-      _$_User;
+      {required final String id,
+      required final String profileImageUrl}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
   @override
   String get id;
   @override
-  @JsonKey(name: 'profile_image_url')
   String get profileImageUrl;
   @override
   @JsonKey(ignore: true)

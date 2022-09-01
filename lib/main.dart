@@ -1,13 +1,12 @@
-import 'repository/article_repository_impl.dart';
 import 'package:dio/dio.dart';
-
-import 'api/api_client.dart';
-import 'data/article.dart';
-import 'view_model/article_list_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'api/api_client.dart';
+import 'data/article.dart';
+import 'repository/article_repository_impl.dart';
 import 'view/article_list_view.dart';
+import 'view_model/article_list_view_model.dart';
 
 final apiClientProvider = Provider.autoDispose((ref) => ApiClient(Dio()));
 
@@ -38,7 +37,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ArticleListView(),
+      home: const ArticleListView(),
     );
   }
 }

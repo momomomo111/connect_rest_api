@@ -6,6 +6,7 @@ part 'article.g.dart';
 
 @freezed
 class Article with _$Article {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory Article({
     required String id,
     required String title,
